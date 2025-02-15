@@ -26,7 +26,7 @@ if (hints.length != 15) {
 }
 const hint = "赤が紅を指す時青が指す言葉は何";
 const hintStrings = hint.split("");
-const timeLimit = 20;
+const timeLimit = 30;
 
 const quizManager = new QuizManager(
   answers,

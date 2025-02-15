@@ -21,7 +21,7 @@ if (hints.length != 10) {
 }
 const hint = "さいせいボタンつくれ";
 const hintStrings = hint.split("");
-const timeLimit = 15;
+const timeLimit = 25;
 
 const quizManager = new QuizManager(
   answers,
