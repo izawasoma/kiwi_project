@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="./css/destyle.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>DEBUG</title>
+</head>
+<body>
+    <main>
+        <h1 class="font-zen-dots">DEBUG</h1>
+        <div class="question-display">
+            <img class="qclt" src="./img/q-corner-lt.svg">
+            <img class="qcrt" src="./img/q-corner-rt.svg">
+            <img class="qcrb" src="./img/q-corner-rb.svg">
+            <img class="qclb" src="./img/q-corner-lb.svg">
+            <h2 class="font-zen-dots">Question</h2>
+            <div class="question-main">
+                保存した時刻：<span id="showtime"></span>
+            </div>
+        </div>
+        <div class="answer-area">
+            <input class="input-answer" id="answer" type="text">
+            <button class="button-del font-zen-dots" id="del" onclick="onClickShowButton()">Show</button>
+            <button class="button-ok font-zen-dots" id="ok" onclick="onClickSaveButton()">Save</button>
+        </div>
+        <div class="hint-area">
+            <h2 class="font-zen-dots">HINT</h2>
+            <div class="hints">
+                <div class="hint-col">
+                    <div class="hint active">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                </div>
+                <div class="hint-col">
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const onClickSaveButton = () => {
+            const d = new Date();
+            localStorage.setItem("scrapPaneQSavedTime", d.toISOString());
+        }
+        const showtime = document.getElementById("showtime")
+        const onClickShowButton = () => {
+            const savedTime = localStorage.getItem("scrapPaneQSavedTime");
+            if(!savedTime){
+                showtime.textContent = "ローカルストレージにデータが存在しません";
+            }
+            else if(Date.parse(savedTime) == NaN){
+                showtime.textContent = "ローカルストレージに保存されたデータが不正です。データが壊れている、または不正な操作を加えた恐れがあります";
+            }
+            else {
+                const date = new Date(savedTime);
+                showtime.textContent = date.toString();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="./css/destyle.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/second.css">
+    <title>2nd stage</title>
+</head>
+<body>
+    <main>
+        <h1 class="font-zen-dots">STAGE2</h1>
+        <div class="question-display">
+            <img class="qclt" src="./img/q-corner-lt.svg">
+            <img class="qcrt" src="./img/q-corner-rt.svg">
+            <img class="qcrb" src="./img/q-corner-rb.svg">
+            <img class="qclb" src="./img/q-corner-lb.svg">
+            <h2 class="font-zen-dots">Question</h2>
+            <div class="question-main">
+                <img class="quiz-contents inactive" src="./img/Q2-1.svg" alt="quiz2-1">
+                <img class="quiz-contents inactive" src="./img/Q2-2.svg" alt="quiz2-2">
+                <img class="quiz-contents inactive" src="./img/Q2-3.svg" alt="quiz2-3">
+                <img class="quiz-contents inactive" src="./img/Q2-4.svg" alt="quiz2-4">
+                <img class="quiz-contents inactive" src="./img/Q2-5.svg" alt="quiz2-5">
+                <img class="quiz-contents inactive" src="./img/Q2-6.svg" alt="quiz2-6">
+                <img class="quiz-contents inactive" src="./img/Q2-7.svg" alt="quiz2-7">
+                <img class="quiz-contents inactive" src="./img/Q2-8.svg" alt="quiz2-8">
+                <img class="quiz-contents inactive" src="./img/Q2-9.svg" alt="quiz2-9">
+                <img class="quiz-contents inactive" src="./img/Q2-10.svg" alt="quiz2-10">
+                <img class="quiz-contents inactive" src="./img/Q2-11.svg" alt="quiz2-11">
+                <img class="quiz-contents inactive" src="./img/Q2-12.svg" alt="quiz2-12">
+                <img class="quiz-contents inactive" src="./img/Q2-13.svg" alt="quiz2-13">
+                <img class="quiz-contents inactive" src="./img/Q2-14.svg" alt="quiz2-14">
+                <img class="quiz-contents inactive" src="./img/Q2-15.svg" alt="quiz2-15">
+                <div class="quiz-contents inactive display-all-over">
+                    <p class="display-all-over-head font-zen-dots">ALL OVER</p>
+                    <p class="display-all-over-main">「HINT」から導き出される答えを送信してください。</p>
+                </div>
+            </div>
+            <div class="question-timer font-zen-dots" id="question-timer">
+                20
+            </div>
+        </div>
+        <div class="answer-area">
+            <input class="input-answer" id="answer" type="text">
+            <button class="button-del font-zen-dots" id="del" onclick="onClickDELButton()">DEL</button>
+            <button class="button-ok font-zen-dots" id="ok" onclick="onClickOKButton()">OK</button>
+        </div>
+        <div class="hint-area">
+            <h2 class="font-zen-dots">HINT</h2>
+            <div class="hints">
+                <div class="hint-col">
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                </div>
+                <div class="hint-col">
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                </div>
+                <div class="hint-col">
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                    <div class="hint unactive">?</div>
+                </div>
+            </div>
+        </div>
+        <button id="debug-button" onclick="quizManager.showUncorrectAnimation()">debug</button>
+        <button id="stage-start" onclick="gamestart()">start</button>
+    </main>
+    <div class="uncorrect" id="uncorrect"></div>
+    <div class="correct" id="correct">
+        <img src="./img/correct.svg" alt="correct">
+        <div class="background"></div>
+    </div>
+    <div class="start_modal" id="start_modal">
+        <div class="start" id="start">
+            <p class="description">再生ボタンを押すと<br>問題がスタートします</p>
+            <p class="attention">※スタート後は一時停止ができません</p>
+            <div class="main" onclick="start()">
+                <img src="./img//start.svg" alt="start">
+                <p class="font-zen-dots">PRESS TO START</p>
+            </div>
+        </div>
+        <div class="start-count font-zen-dots" id="start-count">
+            3
+        </div>
+    </div>
+    <script src="./javascript/QuizManager.js"></script>
+    <script src="./javascript/common.js"></script>
+    <script src="./javascript/secondstage.js"></script>
+</body>
+</html>

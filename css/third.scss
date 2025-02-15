@@ -1,0 +1,62 @@
+.question-main{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > img {
+        transform: scale(1);
+    }
+    & > .active {
+        display: block;
+    }
+    & > .inactive {
+        display: none;
+    }
+    & > .display-all-over {
+        color: #FAFEFF;
+        & > .display-all-over-head {
+            font-size: 2.8rem;
+            line-height: 4.2rem;
+            text-align: center;
+            text-shadow: 0px 0px 6px #FAFEFF;
+        }
+        & > .display-all-over-main {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            text-align: center;
+            text-shadow: 0px 0px 6px #FAFEFF;
+        }
+    }
+}
+
+/* スマートフォン用デザイン */
+@media (max-width: 767px) {
+    .question-main{
+        height: 20rem;
+        & > img {
+            transform: scale(1);
+        }
+    }
+  }
+  
+  /* タブレット用デザイン */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .question-main{
+        flex-grow: 1;
+        display: flex;
+        & > img {
+            transform: scale(1);
+        }
+    }
+  }
+  
+  /* PC用デザイン */
+  @media (min-width: 1025px) {
+    .question-main{
+        height: 20rem;
+        & > img {
+            transform: scale(1);
+        }
+    }
+  }
